@@ -178,6 +178,20 @@ buttonDivide.addEventListener('click', function() {
 
 
 buttonGo.addEventListener('click', function() {
-  input = "";
-  newWindow.textContent = input;
+  if (input.includes("+", 0)) {
+    input = Number(input.charAt(0)) + Number(input.charAt(2));
+    newWindow.textContent = input;
+  } else if (input.includes("-", 0)) {
+    input = Number(input.charAt(0)) - Number(input.charAt(2));
+    newWindow.textContent = input;
+  } else if (input.includes("*", 0)) {
+    input = Number(input.charAt(0)) * Number(input.charAt(2));
+    newWindow.textContent = input;
+  } else if (input.includes("/", 0)) {
+    input = Number(input.charAt(0)) / Number(input.charAt(2));
+    newWindow.textContent = input;
+  } else {
+    input = "yooo";
+    newWindow.textContent = input;
+  }
 });
