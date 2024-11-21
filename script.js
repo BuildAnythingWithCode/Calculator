@@ -11,6 +11,14 @@ let buttonEight = document.querySelector("#eight");
 let buttonNine = document.querySelector("#nine");
 let buttonZero = document.querySelector("#zero");
 
+let buttonAdd = document.querySelector("#add");
+let buttonSubtract = document.querySelector("#subtract");
+let buttonMultiply = document.querySelector("#multiply");
+let buttonDivide = document.querySelector("#divide");
+
+let buttonClear = document.querySelector("#clear");
+let buttonGo = document.querySelector("#go");
+
 let newWindow = document.querySelector("#window");
 
 buttonOne.addEventListener('click', function() {
@@ -60,5 +68,116 @@ buttonNine.addEventListener('click', function() {
 
 buttonZero.addEventListener('click', function() {
   input = input + 0;
+  newWindow.textContent = input;
+});
+
+
+
+
+buttonClear.addEventListener('click', function() {
+  input = "";
+  newWindow.textContent = input;
+});
+
+
+
+
+buttonAdd.addEventListener('click', function() {
+  if (input.slice(-1) === "+" || 
+    input.slice(-1) === "-" || 
+    input.slice(-1) === "*" || 
+    input.slice(-1) === "/") {
+      input = input.slice(0, -1);
+      input = input + "+";
+  } else if (input.slice(-1) === "0" || 
+    input.slice(-1) === "1" || 
+    input.slice(-1) === "2" || 
+    input.slice(-1) === "3" || 
+    input.slice(-1) === "4" || 
+    input.slice(-1) === "5" || 
+    input.slice(-1) === "6" || 
+    input.slice(-1) === "7" || 
+    input.slice(-1) === "8" || 
+    input.slice(-1) === "9") {
+    input = input + "+";
+  } else {
+    input = "";
+  } newWindow.textContent = input;
+});
+
+buttonSubtract.addEventListener('click', function() {
+  if (input.slice(-1) === "+" || 
+    input.slice(-1) === "-" || 
+    input.slice(-1) === "*" || 
+    input.slice(-1) === "/") {
+      input = input.slice(0, -1);
+      input = input + "-";
+  } else if (input.slice(-1) === "0" || 
+    input.slice(-1) === "1" || 
+    input.slice(-1) === "2" || 
+    input.slice(-1) === "3" || 
+    input.slice(-1) === "4" || 
+    input.slice(-1) === "5" || 
+    input.slice(-1) === "6" || 
+    input.slice(-1) === "7" || 
+    input.slice(-1) === "8" || 
+    input.slice(-1) === "9") {
+    input = input + "-";
+  } else {
+    input = "";
+  } newWindow.textContent = input;
+});
+
+buttonMultiply.addEventListener('click', function() {
+  if (input.slice(-1) === "+" || 
+    input.slice(-1) === "-" || 
+    input.slice(-1) === "*" || 
+    input.slice(-1) === "/") {
+      input = input.slice(0, -1);
+      input = input + "*";
+  } else if (input.slice(-1) === "0" || 
+    input.slice(-1) === "1" || 
+    input.slice(-1) === "2" || 
+    input.slice(-1) === "3" || 
+    input.slice(-1) === "4" || 
+    input.slice(-1) === "5" || 
+    input.slice(-1) === "6" || 
+    input.slice(-1) === "7" || 
+    input.slice(-1) === "8" || 
+    input.slice(-1) === "9") {
+    input = input + "*";
+  } else {
+    input = "";
+  } newWindow.textContent = input;
+});
+
+buttonDivide.addEventListener('click', function() {
+  if (input.slice(-1) === "+" || 
+    input.slice(-1) === "-" || 
+    input.slice(-1) === "*" || 
+    input.slice(-1) === "/") {
+      input = input.slice(0, -1);
+      input = input + "/";
+  } else if (input.slice(-1) === "0" || 
+    input.slice(-1) === "1" || 
+    input.slice(-1) === "2" || 
+    input.slice(-1) === "3" || 
+    input.slice(-1) === "4" || 
+    input.slice(-1) === "5" || 
+    input.slice(-1) === "6" || 
+    input.slice(-1) === "7" || 
+    input.slice(-1) === "8" || 
+    input.slice(-1) === "9") {
+    input = input + "/";
+  } else {
+    input = "";
+  } newWindow.textContent = input;
+});
+
+
+
+
+buttonGo.addEventListener('click', function() {
+  input = "";
   newWindow.textContent = input;
 });
