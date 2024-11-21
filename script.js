@@ -1,4 +1,7 @@
 let input = "";
+let operator = "";
+
+
 
 let buttonOne = document.querySelector("#one");
 let buttonTwo = document.querySelector("#two");
@@ -177,18 +180,35 @@ buttonDivide.addEventListener('click', function() {
 
 
 
+
 buttonGo.addEventListener('click', function() {
   if (input.includes("+", 0)) {
-    input = Number(input.charAt(0)) + Number(input.charAt(2));
+    operator = "+";
+    let parts = input.split(operator);
+    let numOne = Number(parts[0]);
+    let numTwo = Number(parts[1]);
+    input = numOne + numTwo;
     newWindow.textContent = input;
   } else if (input.includes("-", 0)) {
-    input = Number(input.charAt(0)) - Number(input.charAt(2));
+    operator = "-";
+    let parts = input.split(operator);
+    let numOne = Number(parts[0]);
+    let numTwo = Number(parts[1]);
+    input = numOne - numTwo;
     newWindow.textContent = input;
   } else if (input.includes("*", 0)) {
-    input = Number(input.charAt(0)) * Number(input.charAt(2));
+    operator = "*";
+    let parts = input.split(operator);
+    let numOne = Number(parts[0]);
+    let numTwo = Number(parts[1]);
+    input = numOne * numTwo;
     newWindow.textContent = input;
   } else if (input.includes("/", 0)) {
-    input = Number(input.charAt(0)) / Number(input.charAt(2));
+    operator = "/";
+    let parts = input.split(operator);
+    let numOne = Number(parts[0]);
+    let numTwo = Number(parts[1]);
+    input = numOne / numTwo;
     newWindow.textContent = input;
   } else {
     input = "yooo";
